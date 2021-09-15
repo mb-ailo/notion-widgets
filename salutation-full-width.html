@@ -1,4 +1,4 @@
-<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
+ <!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +54,7 @@ h1 {
 
 .clock {
     display: inline;
-    font-family: 'arial', cursive;
+    font-family: 'Bebas Neue', cursive;
     font-size: 2em;
    
 }
@@ -72,7 +72,7 @@ h1 {
 .date {
     display: inline;
     min-width: 162px;
-    font-family: 'arial', cursive;
+    font-family: 'Bebas Neue', cursive;
     font-size: 2em;
     padding-right: 30px;
 }
@@ -109,22 +109,16 @@ h1 {
 
 <script>
     function date() {
- new Date().toLocaleTimeString('en-GB', { hour: "numeric", 
-                                             minute: "numeric"});
+var today = new Date();
+document.getElementById('date').innerHTML = today.toDateString();
 }
 
 
 function clock() {
-var today = new Date();
-var hour = zeros(twelveHour(today.getHours()));
-var minutes = zeros(today.getMinutes());
-var seconds = zeros(today.getSeconds());
-if(today.getHours() >=12){
-    seconds+=" pm"
-}
-else{
-    seconds+=" am"
-}
+var today =     new Date().toLocaleTimeString('en-GB', { 
+    hour: "numeric", 
+    minute: "numeric"})
+
 hrs = today.getHours();
 if (hrs < 12)
         greet = 'Good Morning  ';
