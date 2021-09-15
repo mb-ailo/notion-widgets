@@ -96,7 +96,13 @@ h1 {
 </div>
 
 <script>
-   function clock() {
+    function date() {
+var today = new Date();
+document.getElementById('date').innerHTML = today.toDateString();
+}
+
+
+function clock() {
 var today = new Date();
 var hour = zeros(twelveHour(today.getHours()));
 var minutes = zeros(today.getMinutes());
