@@ -1,4 +1,4 @@
- <!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
+<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +72,7 @@ h1 {
 .date {
     display: inline;
     min-width: 162px;
-    font-family: 'Arial', cursive;
+    font-family: 'Bebas Neue', cursive;
     font-size: 2em;
     padding-right: 30px;
 }
@@ -112,13 +112,25 @@ h1 {
 var today = new Date();
 document.getElementById('date').innerHTML = today.toDateString();
 }
-
-
 function clock() {
-var today =     new Date().toLocaleTimeString('en-GB', { 
-    hour: "numeric", 
-    minute: "numeric"})
-
+    var d = new Date(date);
+    var hh = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    var dd = "AM";
+    var h = hh;
+    if (h >= 12) {
+        h = hh-12;
+        dd = "PM";
+    }
+    if (h == 0) {
+        h = 12;
+    }
+    m = m<10?"0"+m:m;
+    
+    s = s<10?"0"+s:s;
+}
+ 
 hrs = today.getHours();
 if (hrs < 12)
         greet = 'Good Morning  ';
@@ -131,6 +143,16 @@ document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
 document.getElementById('min').innerHTML = minutes;
 document.getElementById('sec').innerHTML = seconds;
+}
+
+function twelveHour(hour) {
+if (hour > 12) {
+    return hour -= 12 
+} else if (hour === 0) {
+    return hour = 12;
+} else {
+    return hour
+}
 }
     
 // adds zero infront of single digit number
