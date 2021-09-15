@@ -100,7 +100,6 @@ h1 {
         <div class="colon">:</div>
         <div class="time" id="min"></div>
         <div class="colon">:</div>
-        <div class="time" id="sec"></div>
       </div>
     </div>
     
@@ -127,11 +126,11 @@ else{
 }
 hrs = today.getHours();
 if (hrs < 12)
-        greet = 'Bonjour Maiwène, il est  ';
+        greet = 'Good morning Maiwène, il est  ';
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'Good Afternoon ';
+        greet = 'Good afernoon Maiwène, il est ';
     else if (hrs >= 17 && hrs <= 24)
-        greet = 'Good Evening  ';
+        greet = 'Good evening Maiwène, il est ';
 // console.log(today.toLocaleTimeString());
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
