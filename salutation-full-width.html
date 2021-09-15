@@ -72,7 +72,7 @@ h1 {
 .date {
     display: inline;
     min-width: 162px;
-    font-family: 'Arial', cursive;
+    font-family: 'Bebas Neue', cursive;
     font-size: 2em;
     padding-right: 30px;
 }
@@ -112,25 +112,19 @@ h1 {
 var today = new Date();
 document.getElementById('date').innerHTML = today.toDateString();
 }
+
+
 function clock() {
-    var d = new Date(date);
-    var hh = d.getHours();
-    var m = d.getMinutes();
-    var s = d.getSeconds();
-    var dd = "AM";
-    var h = hh;
-    if (h >= 12) {
-        h = hh-12;
-        dd = "PM";
-    }
-    if (h == 0) {
-        h = 12;
-    }
-    m = m<10?"0"+m:m;
-    
-    s = s<10?"0"+s:s;
+var today = new Date();
+var hour = zeros(twelveHour(today.getHours()));
+var minutes = zeros(today.getMinutes());
+var seconds = zeros(today.getSeconds());
+if(today.getHours() >=24){
+    seconds+=" pm"
 }
- 
+else{
+    seconds+=" am"
+}
 hrs = today.getHours();
 if (hrs < 12)
         greet = 'Good Morning  ';
