@@ -71,10 +71,10 @@ h1 {
 
 .date {
     display: inline;
-    min-width: 0px;
+    min-width: 160px;
     font-family: 'arial', cursive;
     font-size: 0em;
-    padding-right: 0px;
+    padding-right: 30px;
 }
 .greet{
     
@@ -135,6 +135,13 @@ document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
 document.getElementById('min').innerHTML = minutes;
 document.getElementById('sec').innerHTML = seconds;
+}
+    
+    
+function twelveHour(hour) {
+if (hour > 24) {
+    return hour -= 0 
+}
 }
     
 // adds zero infront of single digit number
